@@ -1,8 +1,11 @@
 # Bridge Degradation Segmentation
 
-## Installation
+## Prerequisite
+NVIDIA Driver: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
 
-Assuming the NVIDIA drivers are properly installed (see [installation](https://github.com/NVIDIA/nvidia-docker/wiki/Installation))
+CUDA and cuDNN: https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support
+
+## Installation
 
 ```sh
 # Install Docker CE
