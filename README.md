@@ -21,8 +21,9 @@ cd utils
 ./download_images.sh
 sudo apt install s3cmd
 cd ../dataset
-s3cmd --access_key=$S3ACCESSKEY --secret_key=$S3SECRETKEY get s3://bridge-degradation/masks/bridge_masks_25102017.tar.bz
-tar xvjf bridge_masks_25102017.tar.bz
+s3cmd --access_key=$S3ACCESSKEY --secret_key=$S3SECRETKEY get s3://bridge-degradation/masks/bridge_masks_25102017.tar.bz2
+tar xvjf bridge_masks_25102017.tar.bz2
+rm -rf bridge_masks_25102017.tar.bz2
 cd ..
 ```
 
