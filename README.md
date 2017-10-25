@@ -6,6 +6,26 @@ NVIDIA Driver: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
 CUDA and cuDNN: https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support
 (there are some issues with cuda 9, so use cuda 8 instead)
 
+## Get Dataset
+
+```sh
+# You can also keep these commands in ~/.bashrc
+export LABELME_USERNAME=<labelme_username>
+export LABELME_PASSWD=<labelme_password>
+export S3ACCESSKEY=<s3_accesskey>
+export S3SECRETKEY=<s3_secretkey>
+```
+
+```sh
+cd utils
+./download_images.sh
+sudo apt install s3cmd
+cd ../dataset
+s3cmd --access_key=$S3ACCESSKEY --secret_key=$S3SECRETKEY get s3://bridge-degradation/masks/bridge_masks_25102017.tar.bz
+tar xvjf bridge_masks_25102017.tar.bz
+cd ..
+```
+
 ## Installation
 
 ```sh
@@ -49,3 +69,4 @@ make bash GPU=0 BACKEND=tensorflow DATA=/home/<data> SRC=/home/<src>
 cd examples/
 python mnist_cnn.py
 ```
+
