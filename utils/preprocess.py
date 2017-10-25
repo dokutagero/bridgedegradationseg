@@ -5,13 +5,17 @@ import progressbar
 
 def save_patches(datapath, patch_size=100):
 
+    result_dirs = ['image_patches', 'mask_patches', 'dataset']
+
     print('Creating patches...')
     bar = progressbar.ProgressBar()
     for root, dirs, files in bar(os.walk(datapath)):
         for f in files:
-            if f.endswith('.jpg') and '_' not in f:
-                print(os.path.join(root, f))
-                patches_path = root + '/' + f.split('.')[0] + '_' + str(patch_size)
+            image_set = root.split('/')[-2]
+            # Ignoring weird file and avoiding creating patches from already created ones
+            if f.endswith('.jpg') and image_set not in result_dirs and not f.startswith('._'):
+                # Sorry for next crappy line :)
+                patches_path = os.path.join('/'.join(root.split('/')[:2]), image_set+'_patches', str(patch_size), root.split('/')[-1], f.split('.')[0])
                 if not os.path.exists(patches_path):
                     os.makedirs(patches_path)
                 patches = extract_patches(os.path.join(root,f), patches_path, patch_size)
@@ -20,17 +24,16 @@ def save_patches(datapath, patch_size=100):
 
 def extract_patches(imgpath, outpath, patch_size):
     im = Image.open(imgpath)
-    # The roll axis swaps axis 0 and 1 since Pillow is column based and np row based
-    # im_np = np.rollaxis(np.array(im), 1, 0)
-
-    # Sliding window
-    print(im.size)
-
     for r in range(im.size[1] // patch_size):
         for c in range(im.size[0] // patch_size):
-            # if (r+1)*(patch_size) > im.size[0] or (c+1)*patch_size > im.size[1]:
-            #     break
-
             subpatch = im.crop((c*patch_size, r*patch_size, (c+1)*patch_size, (r+1)*patch_size))
-            # patch_path = os.path.join('/'.join(imgpath.split('/')[:-1]), imgpath.split('/')[-1].split('.')[0])
-            subpatch.save(os.path.join(outpath,str(r)+'_'+str(c)+'.jpg'))
+            subpatch.save(os.path.join(outpath,str(r)+'_'+str(c)+'.jpg'), quality=95)
+
+
+def main():
+    datapath = sys.argv[1]
+    patch_size = int(sys.argv[2])
+    save_patches(datapath, patch_size)
+
+if __name__=="__main__":
+    main()
