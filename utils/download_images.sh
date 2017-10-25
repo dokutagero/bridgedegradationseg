@@ -1,0 +1,209 @@
+#!/bin/bash
+
+mkdir -p ../dataset/images
+cd ../dataset/images
+
+mkdir -p deck_a
+cd deck_a
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_a/0018.jpg
+
+cd ..
+mkdir -p deck_c
+cd deck_c
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0001.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0050.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0061.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0062.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0063.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0067.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0086.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0242.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0243.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0288.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0296.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0302.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0319.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0357.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0360.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0377.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0378.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0379.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0380.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0381.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0382.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0383.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0384.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0385.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0386.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0402.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0405.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0406.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0411.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0413.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0418.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0422.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0423.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0427.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0457.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0494.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0517.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0521.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0531.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0539.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0542.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0568.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0573.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0576.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0579.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0588.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_c/0590.jpg
+
+cd ..
+mkdir -p deck_d
+cd deck_d
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0025.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0029.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0046.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0062.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0063.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0115.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0129.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0130.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0131.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0132.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0133.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0146.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0147.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0152.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0160.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0161.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0165.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0167.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0168.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0169.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0170.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0171.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0197.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0198.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0201.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0216.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0217.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0219.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0220.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0221.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0228.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0230.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0238.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0239.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0241.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0246.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0248.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0249.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0250.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0251.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0252.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0258.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0259.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0260.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0264.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0276.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0280.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0282.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0284.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0285.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0287.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0289.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0291.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0370.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0377.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0392.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0408.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0412.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0413.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0416.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0418.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0431.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0485.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0549.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0559.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0590.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0604.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0647.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0657.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0719.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0731.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0734.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0737.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0740.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0748.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0754.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0756.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0757.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0758.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0762.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0763.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0769.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0772.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0773.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0774.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0823.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/0845.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1018.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1019.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1021.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1059.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1067.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1068.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1072.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1073.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1087.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1089.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1094.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1097.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1117.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1136.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1142.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1151.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1154.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1157.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1162.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1163.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1178.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1184.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1191.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1197.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1233.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1240.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1257.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1264.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1269.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1270.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1278.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1291.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1298.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1300.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1301.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1302.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1303.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1304.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1308.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1313.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1314.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_d/1316.jpg
+
+cd ..
+mkdir -p deck_e
+cd deck_e
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0049.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0051.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0052.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0122.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0143.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0151.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0152.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0208.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0225.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0226.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0228.jpg
+curl -s -O -u $LABELME_USERNAME:$LABELME_PASSWD https://labelme-nii.mrteera.com/Images/deck_e/0229.jpg
+cd ..
