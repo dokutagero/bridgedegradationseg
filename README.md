@@ -4,6 +4,7 @@
 NVIDIA Driver: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
 
 CUDA and cuDNN: https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support
+(there are some issues with cuda 9, so use cuda 8 instead)
 
 ## Installation
 
