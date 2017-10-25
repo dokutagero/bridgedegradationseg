@@ -35,8 +35,6 @@ def load_data(percent_of_damage=0.2):
                 else:
                     label_list.append(0)
     x = np.array(image_list)
-    print(label_list.count(1))
-    print(label_list.count(0))
     y = np.array(label_list)[:, np.newaxis]
     x_train, x_test, y_train, y_test = train_test_split(
         x,
