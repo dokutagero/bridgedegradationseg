@@ -13,7 +13,7 @@ def save_patches(datapath, patch_size=100):
         for f in files:
             image_set = root.split('/')[-2]
             # Ignoring weird file and avoiding creating patches from already created ones
-            if f.endswith('.jpg') and image_set not in result_dirs and not f.startswith('._'):
+            if (f.endswith('.jpg') or f.endswith('.png')) and image_set not in result_dirs and not f.startswith('._'):
                 # Sorry for next crappy line :)
                 patches_path = os.path.join('/'.join(root.split('/')[:2]), image_set+'_patches', str(patch_size), root.split('/')[-1], f.split('.')[0])
                 if not os.path.exists(patches_path):
@@ -27,7 +27,7 @@ def extract_patches(imgpath, outpath, patch_size):
     for r in range(im.size[1] // patch_size):
         for c in range(im.size[0] // patch_size):
             subpatch = im.crop((c*patch_size, r*patch_size, (c+1)*patch_size, (r+1)*patch_size))
-            subpatch.save(os.path.join(outpath,str(r)+'_'+str(c)+'.jpg'), quality=95)
+            subpatch.save(os.path.join(outpath,str(r)+'_'+str(c)+'.png'))
 
 
 def main():
