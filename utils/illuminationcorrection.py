@@ -1,9 +1,7 @@
 import cv2
 import numpy as np
-import os
 from PIL import Image
-import progressbar
-import time
+
 
 def illuminationcorrection (pilimg, clipLim = 1.0, gridSize = 32):
     
@@ -31,20 +29,3 @@ def illuminationcorrection (pilimg, clipLim = 1.0, gridSize = 32):
     pilfinal = Image.fromarray(cvfinal)
     
     return pilfinal
-
-
-datapath = '../dataset/images'
-result_dirs = ['image_patches', 'mask_patches', 'dataset']
-bar = progressbar.ProgressBar()
-for root, dirs, files in bar(os.walk(datapath)):
-    for f in files:
-        image_set = root.split('/')[-2]
-        # Ignoring weird file and avoiding creating patches from already created ones
-        if f.endswith('.jpg') and image_set not in result_dirs and not f.startswith('._'):
-            imgpath = os.path.join(root,f)
-            img = Image.open(imgpath)
-            #img = cv2.imread(imgpath, 1)
-            result = illuminationcorrection(img)
-            img.show()
-            result.show()
-            time.sleep(15)
