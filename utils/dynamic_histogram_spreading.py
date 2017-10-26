@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 
-def illuminationcorrection (pilimg, clipLim = 1.0, gridSize = 32):
+def dynamic_histogram_spreading (pilimg, clipLim = 1.0, gridSize = 32):
     
     #convert PIL image to cv image in lab colorspace
     lab = cv2.cvtColor(np.array(pilimg), cv2.COLOR_RGB2LAB)
