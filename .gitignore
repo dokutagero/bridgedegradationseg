@@ -103,4 +103,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-dataset
+dataset/bridge_masks
+dataset/bridge_masks_patches
+dataset/images
+dataset/images_patches
