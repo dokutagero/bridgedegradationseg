@@ -2,10 +2,10 @@ from PIL import Image
 from sklearn.model_selection import train_test_split
 import numpy as np
 import os
+import sys
 
 
-def load_data(percent_of_damage=0.2):
-    root_dir = '../dataset/'
+def load_data(root_dir, percent_of_damage=0.2):
     dataset = 'bridge_masks_patches/'
     patch_dir = '100/'
     deck_dirs = ['deck_a/', 'deck_c/', 'deck_d/', 'deck_e/']
