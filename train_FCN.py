@@ -5,6 +5,10 @@ import utils.preprocess as pp
 import numpy as np
 import keras
 from PIL import Image
+from keras.optimizers import SGD
+from keras.losses import sparse_categorical_crossentropy
+from keras.metrics import sparse_categorical_accuracy
+from keras.utils import to_categorical
 
 def load_full_images(datapath):
 	bridge_masks_path = 'bridge_masks'
@@ -47,7 +51,6 @@ def crop_center(img):
 
 
 if __name__ == "__main__":
-    # model = FCN_Vgg16_32s(input_shape=(None, None, 3), classes=2)
 
     # import data
     datapath = sys.argv[1]
@@ -61,3 +64,17 @@ if __name__ == "__main__":
     for mask in masks:
         mask[mask > 0] = 1
 
+
+    input_shape = imgs[0].shape
+    # input_shape = (None, None, 3)
+    model = FCN_Vgg16_32s(input_shape=input_shape, classes=2) 
+    optimizer = SGD(lr=0.01, momentum=0.9)
+    loss = sparse_categorical_crossentropy
+    metric = sparse_categorical_accuracy
+    model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
+
+    np_imgs = np.array(imgs)
+    np_masks = np.array(masks)
+    # np_masks = to_categorical(np_masks, 2)
+    # np_masks = np.reshape(np_masks, (len(masks), masks[0].shape[0], masks[0].shape[1], 2))
+    np_masks = np.expand_dims(np_masks, axis=-1)
