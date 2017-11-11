@@ -1,3 +1,4 @@
+from utils.datagenerator import generator_from_txt as gft
 from model_FCN32 import FCN_Vgg16_32s
 import os, sys
 import dataset.bridge as bridge
@@ -57,15 +58,15 @@ if __name__ == "__main__":
     data_augmentation = False
     epochs = sys.argv[2]
 
-    imgs, masks = load_full_images(datapath)
-    np_imgs = [im/255 for im in imgs]
+    # imgs, masks = load_full_images(datapath)
+    # np_imgs = [im/255 for im in imgs]
     #np_masks = [m[np.where(m > 0)]=1 for m in masks]
     # Correcting gray values from jpg compression. Save them again?
-    for mask in masks:
-        mask[mask > 0] = 1
+    # for mask in masks:
+    #     mask[mask > 0] = 1
 
 
-    input_shape = imgs[0].shape
+    input_shape = (768, 1024, 3)
     # input_shape = (None, None, 3)
     model = FCN_Vgg16_32s(input_shape=input_shape, classes=2) 
     optimizer = SGD(lr=0.01, momentum=0.9)
@@ -73,8 +74,8 @@ if __name__ == "__main__":
     metric = sparse_categorical_accuracy
     model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
 
-    np_imgs = np.array(imgs)
-    np_masks = np.array(masks)
+    # np_imgs = np.array(imgs)
+    # np_masks = np.array(masks)
     # np_masks = to_categorical(np_masks, 2)
     # np_masks = np.reshape(np_masks, (len(masks), masks[0].shape[0], masks[0].shape[1], 2))
-    np_masks = np.expand_dims(np_masks, axis=-1)
+    # np_masks = np.expand_dims(np_masks, axis=-1)

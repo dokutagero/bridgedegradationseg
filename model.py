@@ -27,7 +27,8 @@ def PatchModel_cifar(x_train, params):
     model.add(Flatten())
     model.add(Dense(256))
     model.add(Activation('relu'))
-    model.add(Dense(params['num_clases']))
-    model.add(Activation('softmax'))
+    # model.add(Dense(params['num_clases']))
+    # model.add(Activation('softmax'))
+    model.add(Dense(1, activation='sigmoid'))
 
     return model
