@@ -6,7 +6,7 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 
 
-def PatchModel_cifar(x_train, params):
+def PatchModel(x_train, params):
 
     model = Sequential()
     model.add(Conv2D(32, (3,3), padding="same",
@@ -32,3 +32,7 @@ def PatchModel_cifar(x_train, params):
     model.add(Dense(1, activation='sigmoid'))
 
     return model
+
+def regular_cnn(x_train, params):
+
+    model = Sequential()

@@ -5,9 +5,9 @@ import os
 import sys
 
 
-def load_data(root_dir, percent_of_damage=0.2):
+def load_data(root_dir, percent_of_damage=0.2, patch_size=100):
     dataset = 'bridge_masks_patches/'
-    patch_dir = '100/'
+    patch_dir = str(patch_size)+'/'
     deck_dirs = ['deck_a/', 'deck_c/', 'deck_d/', 'deck_e/']
     image_list, label_list = [], []
     data_dict = {}
