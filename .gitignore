@@ -106,3 +106,4 @@ venv.bak/
 dataset/*
 !dataset/README.txt
 !dataset/*.py
+!dataset/*.txt
