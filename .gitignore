@@ -107,4 +107,3 @@ dataset/*
 !dataset/README.txt
 !dataset/*.py
 !dataset/*.txt
-!dataset/bridge_masks_patches/100/*.txt
