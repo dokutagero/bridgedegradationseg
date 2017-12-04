@@ -12,17 +12,17 @@ class Alex(chainer.Chain):
 
     insize = 227
 
-    def __init__(self):
+    def __init__(self, in_channels, nclass=1000):
         super(Alex, self).__init__()
         with self.init_scope():
-            self.conv1 = L.Convolution2D(None,  96, 11, stride=4)
+            self.conv1 = L.Convolution2D(in_channels,  96, 11, stride=4)
             self.conv2 = L.Convolution2D(None, 256,  5, pad=2)
             self.conv3 = L.Convolution2D(None, 384,  3, pad=1)
             self.conv4 = L.Convolution2D(None, 384,  3, pad=1)
             self.conv5 = L.Convolution2D(None, 256,  3, pad=1)
             self.fc6 = L.Linear(None, 4096)
             self.fc7 = L.Linear(None, 4096)
-            self.fc8 = L.Linear(None, 1000)
+            self.fc8 = L.Linear(None, nclass)
 
     def __call__(self, x, t):
         h = F.max_pooling_2d(F.local_response_normalization(
@@ -68,6 +68,37 @@ class AlexFp16(Alex):
             self.fc7 = L.Linear(None, 4096, initialW=W, initial_bias=bias)
             self.fc8 = L.Linear(None, 1000, initialW=W, initial_bias=bias)
 
+        self.train = True
+
     def __call__(self, x, t):
         return Alex.__call__(self, F.cast(x, self.dtype), t)
 
+def copy_model (src, dst):
+    assert isinstance (src, chainer.Chain)
+    assert isinstance (dst, chainer.Chain)
+    for child in src.children():
+        if child.name not in dst.__dict__: continue
+        dst_child = dst[child.name]
+        if type(child) != type(dst_child): continue
+        if isinstance (child, chainer.Chain):
+            copy_model (child, dst_child)
+        if isinstance (child, chainer.Link):
+            match = True
+            print(child.__dict__['name'])
+            for a, b in zip (child.namedparams(), dst_child.namedparams()):
+                # print(a)
+                # print(b)
+                if a[0] != b[0]:
+                    match = False
+                    break
+                # print(a[1])
+                # print(b[1])
+                if a[1].data.shape != b[1].data.shape:
+                    match = False
+                    break
+            if not match:
+                print('Ignore {} due to parameter mismatch'.format(child.name))
+                continue
+            for a, b in zip (child.namedparams(), dst_child.namedparams()):
+                b[1].data = a[1].data
+            print('Copy {}'.format(child.name))

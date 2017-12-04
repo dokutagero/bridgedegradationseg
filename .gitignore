@@ -107,3 +107,5 @@ dataset/*
 !dataset/README.txt
 !dataset/*.py
 !dataset/*.txt
+*.pkl
+*.caffemodel

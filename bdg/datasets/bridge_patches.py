@@ -6,7 +6,7 @@ import chainer
 import numpy as np
 from PIL import Image
 import scipy.io
-from .. import data
+# from .. import data
 
 DATASET_BRIDGE_DIR = osp.expanduser('~/repos/bridgedegradationseg/dataset/')
 
@@ -22,7 +22,7 @@ class BridgeSegBase(chainer.dataset.DatasetMixin):
             imgsets_file = osp.join(DATASET_BRIDGE_DIR, "{}.txt".format(split))
             for did in open(imgsets_file):
                 did = did.strip()
-                img_file = osp.join(DATASET_BRIDGE_DIR, 'images_patches/100/', '{}.jpg'.format(did))
+                img_file = osp.join(DATASET_BRIDGE_DIR, 'images_patches/100/', '{}.png'.format(did))
                 lbl_file = osp.join(DATASET_BRIDGE_DIR, 'bridge_masks_patches/100/', '{}.png'.format(did))
                 self.files[split].append({
                     'img' : img_file,
@@ -35,6 +35,7 @@ class BridgeSegBase(chainer.dataset.DatasetMixin):
     def get_example(self, index):
         data_file = self.files[self.split][index]
         img_file = data_file['img']
+        wsize, hsize = 0.5
         img = Image.open(img_file)
         img = img.resize((wsize, hsize))
         lbl_file = data_file['lbl']
