@@ -23,8 +23,8 @@ else:
         alexnet = pkl.load(modelfile)
 
 
-model = Alex(in_channels=3, nclass=1000)
-# copy_model(alexnet, model)
+model = Alex(in_channels=3, nclass=2)
+copy_model(alexnet, model)
 
 optimizer = chainer.optimizers.SGD(lr=0.001)
 # optimizer.add_hook(chainer.optimizer.WeightDecay(rate=0.0005))

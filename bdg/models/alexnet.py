@@ -16,13 +16,13 @@ class Alex(chainer.Chain):
         super(Alex, self).__init__()
         with self.init_scope():
             self.conv1 = L.Convolution2D(in_channels,  96, 11, stride=4)
-            self.conv2 = L.Convolution2D(None, 256,  5, pad=2)
-            self.conv3 = L.Convolution2D(None, 384,  3, pad=1)
-            self.conv4 = L.Convolution2D(None, 384,  3, pad=1)
-            self.conv5 = L.Convolution2D(None, 256,  3, pad=1)
+            self.conv2 = L.Convolution2D(96, 256,  5, pad=2)
+            self.conv3 = L.Convolution2D(256, 384,  3, pad=1)
+            self.conv4 = L.Convolution2D(384, 384,  3, pad=1)
+            self.conv5 = L.Convolution2D(384, 256,  3, pad=1)
             self.fc6 = L.Linear(None, 4096)
             self.fc7 = L.Linear(None, 4096)
-            self.fc8 = L.Linear(None, nclass)
+            self.fc8 = L.Linear(4096, nclass)
 
     def __call__(self, x, t):
         h = F.max_pooling_2d(F.local_response_normalization(
@@ -86,16 +86,21 @@ def copy_model (src, dst):
             match = True
             print(child.__dict__['name'])
             for a, b in zip (child.namedparams(), dst_child.namedparams()):
-                # print(a)
-                # print(b)
+                # print("original: ", a[0])
+                # print("destination: ", b[0])
                 if a[0] != b[0]:
                     match = False
                     break
-                # print(a[1])
-                # print(b[1])
+                # print("original: ", a[1].data)
+                # print("destination: ", b[1].data)
+                if b[1].data is None:
+                    match = False
+                    print('Ignored {} because size is not specified in dst'.format(child.name))
+                    match = False
+                    break;
                 if a[1].data.shape != b[1].data.shape:
                     match = False
-                    break
+                    break;
             if not match:
                 print('Ignore {} due to parameter mismatch'.format(child.name))
                 continue
