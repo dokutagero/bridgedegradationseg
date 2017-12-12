@@ -10,46 +10,45 @@ import scipy.io
 
 DATASET_BRIDGE_DIR = osp.expanduser('~/repos/bridgedegradationseg/dataset/')
 
-class BridgeSegBase(chainer.dataset.DatasetMixin):
+class BridgeSegPatchBase(chainer.dataset.DatasetMixin):
 
     class_names = np.array(['non-damage', 'damage'])
 
-    def __init__(self, split='train'):
-        self.split = split
+    def __init__(self, data_file, dataset_dir):
 
-        self.files = collections.defaultdict(list)
-        for split in ['train_patches', 'validation_patches']:
-            imgsets_file = osp.join(DATASET_BRIDGE_DIR, "{}.txt".format(split))
-            for did in open(imgsets_file):
-                did = did.strip()
-                img_file = osp.join(DATASET_BRIDGE_DIR, 'images_patches/100/', '{}.png'.format(did))
-                lbl_file = osp.join(DATASET_BRIDGE_DIR, 'bridge_masks_patches/100/', '{}.png'.format(did))
-                self.files[split].append({
-                    'img' : img_file,
-                    'lbl' : lbl_file,
-                })
+        self.files = []
+        imgsets_file = osp.join(dataset_dir, "{}.txt".format(data_file))
+        # print(imgsets_file)
+        for did in open(imgsets_file):
+            did = did.strip()
+            img_file = dataset_dir+'/images_patches/100'+'{}.png'.format(did)
+            lbl_file = dataset_dir+'/bridge_masks_patches/100'+'{}.png'.format(did)
+            self.files.append((img_file, lbl_file))
 
     def __len__(self):
-        return len(self.files[self.split])
+        return len(self.files)
 
     def get_example(self, index):
-        data_file = self.files[self.split][index]
-        img_file = data_file['img']
-        wsize, hsize = 0.5
+        data_file = self.files[index]
+        img_file = data_file[0]
         img = Image.open(img_file)
-        img = img.resize((wsize, hsize))
-        lbl_file = data_file['lbl']
+        lbl_file = data_file[1]
         lbl = Image.open(lbl_file)
-        lbl = lbl.resize((wsize, hsize))
-
-        img = np.array(img, dtype=np.uint8)
-        lbl = np.array(lbl, dtype=np.uint32)
-        lbl = (lbl/255).astype(np.int32)
+        
+        img = np.array(img, dtype=np.float32)
+        img = img/255
+        img = img.transpose(2,0,1)
+        lbl = np.array(img, dtype=np.uint8)
+        lbl = lbl/255
+        if np.sum(lbl) > lbl.size*0.8:
+            lbl = 1
+        else:
+            lbl = 0
         return img, lbl
 
-class BridgeSeg(BridgeSegBase):
-    def __init__(self, split='train'):
-       super(BridgeSeg, self).__init__(split=split) 
+class BridgeSegPatch(BridgeSegPatchBase):
+    def __init__(self, data_file, dataset_dir):
+       super(BridgeSegPatch, self).__init__(data_file, dataset_dir) 
 
 
     @staticmethod

@@ -1,1 +1,1 @@
-from .bridge_patches import BridgeSeg
+from .bridge_patches import BridgeSegPatch
