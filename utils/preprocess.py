@@ -1,15 +1,13 @@
 import numpy as np
 import os, sys
 from PIL import Image
-import progressbar
 
 def save_patches(datapath, patch_size=100):
 
     banned_dirs = ['images_patches', 'bridge_masks_patches']
     print('Creating patches...')
     banned = False
-    bar = progressbar.ProgressBar()
-    for root, dirs, files in bar(os.walk(datapath)):
+    for root, dirs, files in os.walk(datapath):
         for f in files:
             banned = False
             image_set = root.split('/')[-2]
