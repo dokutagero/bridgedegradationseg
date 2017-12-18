@@ -36,8 +36,9 @@ class Alex(chainer.Chain):
         h = F.dropout(F.relu(self.fc7(h)))
         h = self.fc8(h)
 
-        loss = F.softmax_cross_entropy(h, t, normalize=False)
-        return loss
+        return h
+        # loss = F.softmax_cross_entropy(h, t, normalize=False)
+        # return loss
 
 #         if t is None:
 #             assert not chainer.config.train

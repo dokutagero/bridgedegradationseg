@@ -30,6 +30,8 @@ class BridgeSegPatchBase(chainer.dataset.DatasetMixin):
 
     def get_example(self, index):
         data_file = self.files[index]
+        # print('image name: ', data_file[0])
+        # print('label name: ', data_file[1])
         img_file = data_file[0]
         img = Image.open(img_file)
         lbl_file = data_file[1]
@@ -38,12 +40,12 @@ class BridgeSegPatchBase(chainer.dataset.DatasetMixin):
         img = np.array(img, dtype=np.float32)
         img = img/255
         img = img.transpose(2,0,1)
-        lbl = np.array(img, dtype=np.uint8)
+        lbl = np.array(lbl, dtype=np.uint8)
         lbl = lbl/255
-        if np.sum(lbl) > lbl.size*0.8:
-            lbl = 1
+        if np.sum(lbl) > lbl.size*0.2:
+            lbl = np.array(1.0, dtype=np.int32)
         else:
-            lbl = 0
+            lbl = np.array(0.0, dtype=np.int32)
         return img, lbl
 
 class BridgeSegPatch(BridgeSegPatchBase):
